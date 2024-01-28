@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+article p {
+    font-size: 24px;
+}
+
+.sales-overview {
+    display: flex;
+    gap: 30px;
+}
+
+article {
+    height: 250px;
+    width: 280px;
+    text-align: center;
+}
+
+.article-items-sold {
+    border: 2px solid green;
+    background-color: #e7f8e7;
+    color: green;
+}
+
+.article-items-bought {
+    border: 2px solid cornflowerblue;
+    background-color: rgb(244, 245, 253);
+    color: cornflowerblue;
+}
+
+.article-items-to-be-sold {
+    border: 2px solid orangered;
+    background-color: #faf2f0;
+    color: orangered;
+}
