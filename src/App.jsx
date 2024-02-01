@@ -1,8 +1,11 @@
 import './App.css';
 import calcSoldItems from "./helpers/calcSoldItems.js";
-import {inventory} from "./constants/inventory.js";
+import {bestSellingTv, inventory} from "./constants/inventory.js";
 import calcStockItems from "./helpers/calcStockItems.js";
 import calcItemsToBeSold from "./helpers/calcItemsToBeSold.js";
+import generateName from "./helpers/generateName.js";
+import generatePrice from "./helpers/generatePrice.js";
+import calcAvailableSizes from "./helpers/calcAvailableSizes.js";
 
 function App() {
 
@@ -29,11 +32,15 @@ function App() {
             </article>
           </section>
           <h2>Best verkochte tv</h2>
-          <section>
-            <span><img src="" alt=""/></span>
-            <div>
-
-            </div>
+          <section className="bestselling-tv">
+              <article className="article-bestselling-tv">
+                  <span className="img-bestelling-tv"><img src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Samsung tv"/></span>
+                  <div>
+                      <p>{generateName(bestSellingTv.brand, bestSellingTv.type, bestSellingTv.name)}</p>
+                      <p>{generatePrice(bestSellingTv.price)}</p>
+                      <p>{calcAvailableSizes(bestSellingTv.availableSizes)}</p>
+                  </div>
+              </article>
           </section>
         </main>
         </body>

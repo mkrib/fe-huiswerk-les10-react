@@ -18,7 +18,9 @@ article p {
 
 .sales-overview {
     display: flex;
+    justify-content: space-between;
     gap: 30px;
+    width: 100%;
 }
 
 article {
@@ -43,4 +45,11 @@ article {
     border: 2px solid orangered;
     background-color: #faf2f0;
     color: orangered;
+}
+
+.article-bestselling-tv {
+    display: flex;
+    border: 2px dashed black;
+    background-color: #efefef;
+    width: 100%;
 }
