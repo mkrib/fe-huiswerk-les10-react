@@ -23,7 +23,7 @@ article p {
     width: 100%;
 }
 
-article {
+.article-items-sold, .article-items-bought, .article-items-to-be-sold {
     height: 250px;
     width: 280px;
     text-align: center;
@@ -52,4 +52,29 @@ article {
     border: 2px dashed black;
     background-color: #efefef;
     width: 100%;
+    padding-bottom: 20px;
+}
+
+.img-bestselling-tv {
+    object-fit: contain;
+    width: 300px;
+    padding: 0 20px;
+}
+
+.icon-check, .icon-minus {
+    height: 18px;
+    width: 18px;
+}
+
+.div-sort-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-sort {
+    padding: 5px 10px;
+    margin: 0 14px;
+    border-radius: 4px;
+    border: 1px solid #b0b0b0;
+    font-family: 'Zen Kaku Gothic New', Avenir, Helvetica, Arial, sans-serif;
 }
