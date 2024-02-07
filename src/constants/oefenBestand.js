@@ -53,7 +53,7 @@ const screenSizeBiggerThan65 = inventory.filter((tv) => {
 console.log(screenSizeBiggerThan65);
 
 // Opdracht 1f (uitdaging): Gebruik array-methoden om alle informatie te verzamelen van de tv's die over ambilight beschikken. Log de uitkomst in de console.
-
+// Onderstaande methode krijg ik niet werkend. Wat gaat hier mis?
 const optionAmbilight = inventory.filter((tv) => {
     return tv.options.find((option) => {
         (option.name === "ambiLight") && (option.applicable === true);

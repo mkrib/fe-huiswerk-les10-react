@@ -12,6 +12,28 @@ import {calcAvailableSizes2} from "./helpers/calcAvailableSizes.js";
 import './constants/oefenBestand.js';
 
 function App() {
+    function sortBestSellers() {
+        inventory.sort((a, b) => {
+            return a.sold -b.sold;
+        });
+        console.log(inventory)
+    }
+
+    function sortCheapest() {
+        inventory.sort((a, b) => {
+            return a.price - b.price;
+        });
+
+        console.log(inventory);
+    }
+
+    function sortSport() {
+        inventory.sort((a, b) => {
+            return a.refreshRate - b.refreshRate;
+        });
+
+        console.log(inventory);
+    }
 
     function mostSoldFirstClicked(){
         console.log("Meest verkocht eerst");
@@ -48,9 +70,9 @@ function App() {
           </section>
           <h2>Best verkochte tv</h2>
           <section className="bestselling-tv">
-              <article className="article-bestselling-tv">
-                  <img className= "img-bestselling-tv" src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Samsung tv"/>
-                  <div className="bestselling-tv-text-div">
+              <article className="article-tv">
+                  <img className= "img-tv" src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Samsung tv"/>
+                  <div className="tv-text-div">
                       <p>{generateName(bestSellingTv.brand, bestSellingTv.type, bestSellingTv.name)}</p>
                       <p>{generatePrice(bestSellingTv.price)}</p>
                       <p>{calcAvailableSizes2(bestSellingTv.availableSizes)}</p>
@@ -61,10 +83,33 @@ function App() {
             <h2>Alle tv's</h2>
             <section className="section-all-tvs">
                 <div className="div-sort-buttons">
-            <button className="btn-sort" type="button" onClick={mostSoldFirstClicked}>Meest verkocht eerst</button>
-            <button className="btn-sort"  type="button" onClick={cheapestFirstClicked}>Goedkoopste eerst</button>
-            <button className="btn-sort"  type="button" onClick={suitableForSportFirstClicked}>Meest geschikt voor sport eerst</button>
+            <button className="btn-sort" type="button" onClick={sortBestSellers}>Meest verkocht eerst</button>
+            <button className="btn-sort"  type="button" onClick={sortCheapest}>Goedkoopste eerst</button>
+            <button className="btn-sort"  type="button" onClick={sortSport}>Meest geschikt voor sport eerst</button>
                 </div>
+                {inventory.map((tv) => {
+                    return (
+                        <article className="article-tv map-article">
+                            <img className= "img-tv" src={tv.sourceImg} alt="Afbeelding televisie"/>
+                            <div className="tv-text-div">
+                                <p>{generateName(tv.brand, tv.type, tv.name)}</p>
+                                <p>{generatePrice(tv.price)}</p>
+                                <p>{calcAvailableSizes2(tv.availableSizes)}</p>
+                                <p>{tv.options.map((option) => {
+                                    if (option.applicable === true) {
+                                        return <img className="icon-check" src={checkIcon} alt="Check icon"/>;
+                                    //     Waarom lukt het mij niet om ook de option.name weer te geven naast het icoon? Onderstaande manieren heb ik geprobeerd:
+                                    //     return <img className="icon-check" src={checkIcon} alt="Check icon"/> option.name;
+                                    //     return <img className="icon-check" src={checkIcon} alt="Check icon"/> {option.name};
+                                    } else {
+                                        return <img className="icon-minus" src={minusIcon} alt="Minus icon"/>;
+                                    }
+                                })}</p>
+                            </div>
+                        </article>
+                    )
+                })}
+
             </section>
         </main>
       </>
