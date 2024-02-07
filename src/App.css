@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+article p {
+    font-size: 24px;
+}
+
+.sales-overview {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
+
+.article-items-sold, .article-items-bought, .article-items-to-be-sold {
+    height: 250px;
+    width: 280px;
+    text-align: center;
+}
+
+.article-items-sold {
+    border: 2px solid green;
+    background-color: #e7f8e7;
+    color: green;
+}
+
+.article-items-bought {
+    border: 2px solid cornflowerblue;
+    background-color: rgb(244, 245, 253);
+    color: cornflowerblue;
+}
+
+.article-items-to-be-sold {
+    border: 2px solid orangered;
+    background-color: #faf2f0;
+    color: orangered;
+}
+
+.article-tv {
+    display: flex;
+    border: 1px solid #7c7b7b;
+    background-color: #efefef;
+    width: 100%;
+    padding: 10px 5px 20px 5px;
+}
+
+.img-tv {
+    object-fit: contain;
+    width: 300px;
+    padding: 0 20px;
+}
+
+.tv-text-div {
+    padding-right: 10px;
+}
+
+.icon-check, .icon-minus {
+    height: 18px;
+    width: 18px;
+}
+
+.div-sort-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-sort {
+    padding: 5px 10px;
+    margin: 0 14px;
+    border-radius: 4px;
+    border: 1px solid #b0b0b0;
+    font-family: 'Zen Kaku Gothic New', Avenir, Helvetica, Arial, sans-serif;
+}
+
+.map-article {
+    margin: 30px 0;
+}
